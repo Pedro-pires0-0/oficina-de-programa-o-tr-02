@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <p>Listy</p>
+        </div>
+
+        <section class="login">
+            <a href="#">Sing Up</a>
+            <button onclick="">Login</button>
+        </section>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="topo">
+                <h1> To Do List </h1>
+
+                <button id="add-btn" onclick="showTaskPage()"> + </button>
+            </div>
+
+            <div class="filter-buttons">
+                <button id="mostrar-pendentes-btn" class="filter-btn active">Mostrar pendentes</button>
+                <button id="mostrar-concluidos-btn" class="filter-btn">Mostrar concluídos</button>
+            </div>
+
+            <section class="card">
+                <div id="tarefas"></div>
+            </section>
+        </div>
+
+        <div class="hidden" id="overlay">
+            <section id="container">
+
+                <button id="close-btn" onclick="closeTaskPage()">&times;</button>
+                <div id="label">
+                    <label for="">Tarefa:</label>
+                    <input id="tarefa" type="text">
+                </div>
+                <div id="label">
+                    <label for="">Duração:</label>
+                    <input id="time" type="date">
+                </div>
+        
+                <button id="adicionarTarefa" type="button">Adicionar</button>
+            </section>
+        </div>
+    </main>
+
+    
+
+
+
+    <script src="./script/script.js"></script>
+
+</body>
+</html>

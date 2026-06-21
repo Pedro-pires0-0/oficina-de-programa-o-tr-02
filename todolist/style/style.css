@@ -1,0 +1,387 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(251, 164, 251, 0.35);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    padding-top: 78px;
+    font-family: Roboto;
+}
+
+p, a, label, button, input {
+    font-size: clamp(10px, 2vw, 18px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fcb6fc;
+    padding: 2rem;
+    height: 78px;
+}
+
+.logo p {
+    font-family: Dancing Script;
+    font-size: clamp(18px, 4.5vw, 36px);
+    color: #ffffff;
+}
+
+.login {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.login a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+.login button {
+    padding: 10px 18px;
+    color: rgb(251, 164, 251);
+    background-color: #ffffff;
+    border: 0.9px solid rgb(138, 32, 138);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    transform: scale(1.05);
+}
+
+.login button:active {
+    background-color: transparent;
+    border: 2px solid rgb(251, 164, 251);
+}
+
+main {
+    padding: 3rem;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0px auto;
+    margin-bottom: 40px;
+}
+
+.topo h1 {
+    color: rgb(138, 32, 138);
+    font-size: clamp(8px, 4.5vw, 30px);
+}
+
+.topo button {
+    border: none;
+    background: transparent;
+    font-size: clamp(8px, 4vw, 24px);
+    color: rgb(138, 32, 138);
+    cursor: pointer;
+}
+
+.topo button:hover {
+    transform: scale(1.1);
+}
+
+.topo button:active {
+    transform: scale(0.9);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 500px;
+    margin: auto;
+    padding: 50px;
+    background-color: rgb(251, 164, 251);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 4px 4px rgba(80, 39, 76, 0.3);
+}
+
+#close-btn {
+    background: transparent;
+    width: 25px;
+    border: none;
+    margin: 0px 0px 0px auto;
+    color: white;
+    font-size: clamp(10px, 4vw, 30px);
+    cursor: pointer;
+}
+
+#close-btn:hover {
+    transform: scale(1.1);
+}
+
+#close-btn:active {
+    transform: scale(0.9);
+}
+
+#label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 40px;
+}
+
+#label label {
+    color: white;
+}
+
+#label input {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: transparent;
+    font-size: clamp(10px, 2vw, 12px);
+    color: white;
+}
+
+#label input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    color: white;
+}
+
+#label input:focus {
+    outline: none;
+    border-color: rgb(138, 32, 138);
+}
+
+#adicionarTarefa {
+    background-color: white;
+    box-shadow: 4px 4px rgba(80, 39, 76, 0.3);
+    border: 0.9px solid rgb(138, 32, 138);
+    color: rgb(251, 164, 251);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: auto;
+    cursor: pointer;
+}
+
+#adicionarTarefa:hover {
+    transform: scale(1.02);
+}
+
+#adicionarTarefa:active {
+    transform: scale(0.95);
+}
+
+#tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid rgb(138, 32, 138);
+    background-color: transparent;
+    color: rgb(138, 32, 138);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: clamp(12px, 2vw, 16px);
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(138, 32, 138, 0.2);
+}
+
+.filter-btn.active {
+    background-color: rgb(138, 32, 138);
+    color: white;
+}
+
+.filter-btn:active {
+    transform: scale(0.95);
+}
+
+.item-todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 2px 2px rgba(80, 39, 76, 0.2);
+    border: 2px solid rgba(251, 164, 251);
+    gap: 1rem;
+    animation: slideIn 0.3s ease-out;
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item-todo.completed {
+    opacity: 0.5;
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.task-name {
+    font-weight: 600;
+    color: rgb(138, 32, 138);
+    font-size: clamp(10px, 2vw, 18px);
+}
+
+.task-duration {
+    font-size: clamp(10px, 2vw, 16px);
+    color: #666;
+}
+
+.task-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: clamp(12px, 1.5vw, 18px);
+    transition: all 0.2s;
+    width: clamp(20px, 5vw, 34px);
+    height: clamp(20px, 5vw, 34px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-edit {
+    background-color: rgb(251, 164, 251);
+    color: white;
+    border: 1px solid rgb(138, 32, 138);
+}
+
+.btn-edit:hover {
+    background-color: rgb(138, 32, 138);
+    transform: scale(1.05);
+}
+
+.btn-exclude {
+    background-color: #f44336;
+    color: white;
+    border: 1px solid #d32f2f;
+}
+
+.btn-exclude:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+.btn-complete {
+    background-color: #4caf50;
+    color: white;
+    border: 1px solid #388e3c;
+}
+
+.btn-complete:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.btn-action:active {
+    transform: scale(0.95);
+}
+
+
+.modal-edit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-edit.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: rgb(251, 164, 251);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 4px 4px rgba(80, 39, 76, 0.3);
+}
